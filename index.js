@@ -72,7 +72,7 @@ const sendEmail = async (user, verificationLink) => {
       </style>
     </head>
     <body>
-      <h1>Welcome, ${user.name}!</h1>
+      <h1>Welcome, ${user.first_name}!</h1>
       <p>Thank you for signing up with our service.</p>
       <p>To complete your registration, please click on the following link to verify your email address:</p>
       <p><a href="${verificationLink}"> Verify your email here </a></p>
