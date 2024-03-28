@@ -74,6 +74,12 @@ const sendEmail = async (user, verificationLink) => {
     <body>
       <h1>Welcome, ${user.first_name}!</h1>
       <p>Thank you for signing up with our service.</p>
+      <p>Please find your details below:</p>
+      <p>
+        First Name: ${user.first_name} </br>
+        Last Name: ${user.last_name} </br>
+        Email: ${user.email}
+      </p>
       <p>To complete your registration, please click on the following link to verify your email address:</p>
       <p><a href="${verificationLink}"> Verify your email here </a></p>
       <p>Once you verify your email address, you will be able to access other APIs.</p>
