@@ -30,7 +30,7 @@ exports.sendVerificationLink = async (event, context) => {
   const { user, verificationToken } = JSON.parse(pubsubMessage);
 
   try {
-    const verificationLink = `http://${MAILGUN_DOMAIN}:3000/v1/user/verify-email?token=${verificationToken}&email=${user.email}`;
+    const verificationLink = `https://${MAILGUN_DOMAIN}/v1/user/verify-email?token=${verificationToken}&email=${user.email}`;
     await sendEmail(user, verificationLink);
 
     await sequelize.query('INSERT INTO TrackEmails (user_id, email, verification_token, sent_at) VALUES (?, ?, ?, ?)', {
